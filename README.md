@@ -1,29 +1,13 @@
-# Obsidian Sample Plugin
+# Fine-grained Tab History for Obsidian
 
-This is a modified version of https://github.com/obsidianmd/obsidian-sample-plugin.
+This is an [Obsidian.md](https://obsidian.md) plugin that enables history navigation even for in-file links.
 
-## Differences from the original sample plugin
+## Support development
 
-- `*.ts` files are put in the `src` directory
-- The plugin class definition and settings-related code are separated into `main.ts` and `settings.ts`
-- [Release GitHub action](https://docs.obsidian.md/Plugins/Releasing/Release+your+plugin+with+GitHub+Actions) is already there
-  - Don't forget to go to `Settings > Actions > General > Workflow permissions` and turn on `Read and write permissions`
-- The default branch has been renamed `main`
+If you find [my plugins](https://ryotaushio.github.io/the-hobbyist-dev/) useful, please support my work to ensure they continue to work!
 
-## Usage
+<a href="https://github.com/sponsors/RyotaUshio" target="_blank"><img src="https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86" alt="GitHub Sponsors" style="width: 180px; height:auto;"></a>
 
-1. Create a new repository using this template ("Use this template" > "Create a new repository")
-2. Clone the created repository
-3. Modify at least the `id` & `name` fields in `manifest.json`.
-4. Modify `package.json` accordingly.
-5. Run `npm i` to install the dependencies
-6. Run `npm run dev` or `npm run build` to compile your plugin
+<a href="https://www.buymeacoffee.com/ryotaushio" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="width: 180px; height:auto;"></a>
 
-### Releasing your plugin
-
-1. If you haven't, go to `Settings > Actions > General > Workflow permissions` and turn on `Read and write permissions`
-2. Bump the version in `manifest.json` (and `package.json`) and then commit & push the change
-3. `git tag -a <version> -m "<version>"`
-4. `git push origin <version>`. This triggers the release action.
-5. When the action is completed, go to the release page of your repository. You will find a newly created draft release.
-6. Release the draft when you're ready.
+<a href='https://ko-fi.com/E1E6U7CJZ' target='_blank'><img height='36' style='border:0px; width: 180px; height:auto;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>

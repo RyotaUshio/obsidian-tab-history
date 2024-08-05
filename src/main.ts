@@ -1,21 +1,16 @@
-import { Plugin } from 'obsidian';
-import { MyPluginSettings, DEFAULT_SETTINGS, SampleSettingTab } from 'settings';
+import { MarkdownView, Plugin, ViewStateResult } from 'obsidian';
+import { around } from 'monkey-around';
 
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
-
+export default class HistoryPlugin extends Plugin {
 	async onload() {
-		await this.loadSettings();
-		await this.saveSettings();
-		this.addSettingTab(new SampleSettingTab(this));
-	}
-
-	async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-	}
-
-	async saveSettings() {
-		await this.saveData(this.settings);
+		this.register(around(MarkdownView.prototype, {
+			setState(old) {
+				return function (this: MarkdownView, state: any, result: ViewStateResult) {
+					result.history = true;
+					return old.call(this, state, result);
+				}
+			} 
+		}));
 	}
 }
